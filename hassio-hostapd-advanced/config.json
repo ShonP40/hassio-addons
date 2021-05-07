@@ -1,0 +1,71 @@
+{
+  "name": "Hassio Hostapd Advanced",
+  "version": "1.2.0",
+  "slug": "hassio-hostapd-advanced",
+  "description": "Access point for your IoT devives with a configurable network interface, DHCP server and more!",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "url": "https://github.com/ShonP40/hassio-addons/tree/master/hassio-hostapd-advanced",
+  "startup": "system",
+  "boot": "auto",
+  "host_network": true,
+  "apparmor": false,
+  "host_dbus": true,
+  "full_access": true,
+  "privileged": [
+    "NET_ADMIN",
+    "SYS_ADMIN",
+    "SYS_RAWIO",
+    "SYS_TIME",
+    "SYS_NICE"
+  ],
+  "devices": [
+    "/dev/mem:/dev/mem:rwm"
+  ],
+  "map": [
+    "config:rw",
+    "ssl:rw",
+    "addons:rw",
+    "share:rw",
+    "backup:rw"
+  ],
+  "options": {
+    "ssid": "",
+    "hide_ssid": "false",
+    "wpa_passphrase": "",
+    "channel": "0",
+    "band": "n",
+    "address": "192.168.4.1",
+    "netmask": "255.255.255.0",
+    "broadcast": "192.168.4.254",
+    "hotspot_interface": "",
+    "country": "",
+    "allow_internet": true,
+    "internet_interface": "wlan0",
+    "dhcp_enable": true,
+    "dhcp_start": "192.168.4.2",
+    "dhcp_end": "192.168.4.199",
+    "dhcp_dns": "1.1.1.1",
+    "dhcp_subnet": "255.255.255.0",
+    "dhcp_router": "192.168.4.1"
+  },
+  "schema": {
+    "ssid": "str",
+    "hide_ssid": "bool",
+    "wpa_passphrase": "str",
+    "channel": "int",
+    "band": "str",
+    "address": "str",
+    "netmask": "str",
+    "broadcast": "str",
+    "hotspot_interface": "str",
+    "country": "str",
+    "allow_internet": "bool",
+    "internet_interface": "str",
+    "dhcp_enable": "bool",
+    "dhcp_start": "str",
+    "dhcp_end": "str",
+    "dhcp_dns": "str",
+    "dhcp_subnet": "str",
+    "dhcp_router": "str"
+  }
+} 
