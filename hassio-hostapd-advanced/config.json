@@ -33,7 +33,7 @@
     "hide_ssid": "false",
     "wpa_passphrase": "",
     "channel": "0",
-    "band": "n",
+    "band": "g",
     "address": "192.168.4.1",
     "netmask": "255.255.255.0",
     "broadcast": "192.168.4.254",
