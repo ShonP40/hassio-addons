@@ -3,7 +3,7 @@ Addons for Supervised Home Assistant installations (e.g. HA OS)
 
 ## This repo includes the following addon (follow the link for more details):
 
-https://github.com/SHonP40/hassio-addons/tree/master/hassio-hostapd-advanced
+https://github.com/ShonP40/hassio-addons/tree/master/hassio-hostapd-advanced
 
 ## Installation
 
