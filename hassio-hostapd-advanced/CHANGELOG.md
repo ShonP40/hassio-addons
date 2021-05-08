@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.2.7]
+- Bugfix
+
 ## [1.2.6]
 ### Added
 - You can now toggle `40MHz` for `802.11n`
