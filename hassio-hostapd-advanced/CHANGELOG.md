@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.9]
+### Added
+- You can now toggle `802.11ac`
+
 ## [1.2.8]
 ### Changed
 - Tweaked the configuration of the `40MHz` option

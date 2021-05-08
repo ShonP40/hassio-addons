@@ -14,6 +14,7 @@ wpa_passphrase: WIFI_PASSWORD
 channel: 1
 band: g
 wifi_n: true
+wifi_ac: false
 ht_40: false
 address: 192.168.4.1
 netmask: 255.255.255.0
@@ -63,6 +64,12 @@ Specifies the WiFi frequency used for the access point.
 ### Option: `wifi_n`
 
 Enables/Disables `802.11n`.
+
+### Option: `wifi_ac`
+
+Enables/Disables `802.11ac`.
+
+**Note**: *You need to set the value of the `band` option to `a` for this option to work as `802.11ac` is only available on **5GHz**.*
 
 ### Option: `ht_40`
 

@@ -28,6 +28,7 @@ WPA_PASSPHRASE=$(jq --raw-output ".wpa_passphrase" $CONFIG_PATH)
 CHANNEL=$(jq --raw-output ".channel" $CONFIG_PATH)
 BAND=$(jq --raw-output ".band" $CONFIG_PATH)
 N=$(jq --raw-output ".wifi_n" $CONFIG_PATH)
+AC=$(jq --raw-output ".wifi_ac" $CONFIG_PATH)
 HT40=$(jq --raw-output ".ht_40" $CONFIG_PATH)
 ADDRESS=$(jq --raw-output ".address" $CONFIG_PATH)
 NETMASK=$(jq --raw-output ".netmask" $CONFIG_PATH)
@@ -114,6 +115,12 @@ then
     echo "ieee80211n=1" >> ${HCONFIG}
 else
     echo "ieee80211n=0" >> ${HCONFIG}
+fi
+if test ${AC} = true
+then
+    echo "ieee80211ac=1" >> ${HCONFIG}
+else
+    echo "ieee80211ac=0" >> ${HCONFIG}
 fi
 if test ${QOS} = true
 then
