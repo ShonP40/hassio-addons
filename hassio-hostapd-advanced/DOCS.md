@@ -8,8 +8,8 @@ This addon allows creating an access point **with an optional DHCP server**, for
 Example add-on configuration:
 
 ```yaml
-ssid: WIFI_NAME,
-hide_ssid: false,
+ssid: WIFI_NAME
+hide_ssid: false
 wpa_passphrase: WIFI_PASSWORD
 channel: 1
 band: g
