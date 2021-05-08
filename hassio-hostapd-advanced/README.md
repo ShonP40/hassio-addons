@@ -11,7 +11,6 @@ The available configuration options are listed bellow. Make sure to edit them ac
     "ssid": "WIFI_NAME",
     "hide_ssid": "false",
     "wpa_passphrase": "WIFI_PASSWORD",
-    "aes": "true",
     "channel": "0",
     "band": "g",
     "wifi_n": true,
