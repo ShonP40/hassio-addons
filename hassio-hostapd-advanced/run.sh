@@ -28,6 +28,7 @@ WPA_PASSPHRASE=$(jq --raw-output ".wpa_passphrase" $CONFIG_PATH)
 CHANNEL=$(jq --raw-output ".channel" $CONFIG_PATH)
 BAND=$(jq --raw-output ".band" $CONFIG_PATH)
 N=$(jq --raw-output ".wifi_n" $CONFIG_PATH)
+40MHZ=$(jq --raw-output ".40_mhz" $CONFIG_PATH)
 ADDRESS=$(jq --raw-output ".address" $CONFIG_PATH)
 NETMASK=$(jq --raw-output ".netmask" $CONFIG_PATH)
 BROADCAST=$(jq --raw-output ".broadcast" $CONFIG_PATH)
@@ -114,6 +115,16 @@ then
 else
     echo "ieee80211n=0" >> ${HCONFIG}
 fi
+if test ${QOS} = true
+then
+    echo "wmm_enabled=1" >> ${HCONFIG}
+else
+    echo "wmm_enabled=0" >> ${HCONFIG}
+fi
+if test ${40MHZ} = true
+then
+    echo "ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]" >> ${HCONFIG}
+fi
 echo "interface=${INTERFACE}" >> ${HCONFIG}
 if test ${SSID_BROADCAST} = true
 then
@@ -122,12 +133,6 @@ else
     echo "ignore_broadcast_ssid=0" >> ${HCONFIG}
 fi
 echo "country_code=${COUNTRY}" >> ${HCONFIG}
-if test ${QOS} = true
-then
-    echo "wmm_enabled=1" >> ${HCONFIG}
-else
-    echo "wmm_enabled=0" >> ${HCONFIG}
-fi
 if test ${MAC} = true
 then
     echo "macaddr_acl=1" >> ${HCONFIG}

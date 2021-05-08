@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.6]
+### Added
+- You can now toggle `40MHz` for `802.11n`
+
+### Changed
+- The default internet intefrace isn't specified by default
+- The `allow_internet` option is now disabled by default
+
 ## [1.2.5]
 ### Changed
 - Reverted to v1.2.2

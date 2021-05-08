@@ -14,6 +14,7 @@ The available configuration options are listed bellow. Make sure to edit them ac
     "channel": "0",
     "band": "g",
     "wifi_n": true,
+    "40_mhz": false,
     "address": "192.168.4.1",
     "netmask": "255.255.255.0",
     "broadcast": "192.168.4.254",
