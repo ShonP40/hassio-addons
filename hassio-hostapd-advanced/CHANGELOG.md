@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.5]
+### Changed
+- Reverted to v1.2.2
+
 ## [1.2.4]
 ### Removed
 - Toggling the `802.11b` option as it doesnt seem to be available in the `Alpine aarch64` version of `Hostapd`.

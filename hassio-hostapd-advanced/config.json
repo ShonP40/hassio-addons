@@ -1,6 +1,6 @@
 {
   "name": "Hassio Hostapd Advanced",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "slug": "hassio-hostapd-advanced",
   "description": "Access point for your IoT devives with a configurable network interface, DHCP server and more",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -32,7 +32,6 @@
     "ssid": "",
     "hide_ssid": "false",
     "wpa_passphrase": "",
-    "aes": true,
     "channel": "0",
     "band": "g",
     "wifi_n": true,
@@ -56,7 +55,6 @@
     "ssid": "str",
     "hide_ssid": "bool",
     "wpa_passphrase": "str",
-    "aes": "bool",
     "channel": "int",
     "band": "str",
     "wifi_n": "bool",
