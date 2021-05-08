@@ -25,9 +25,11 @@ CONFIG_PATH=/data/options.json
 SSID=$(jq --raw-output ".ssid" $CONFIG_PATH)
 SSID_BROADCAST=$(jq --raw-output ".hide_ssid" $CONFIG_PATH)
 WPA_PASSPHRASE=$(jq --raw-output ".wpa_passphrase" $CONFIG_PATH)
+AES=$(jq --raw-output ".aes" $CONFIG_PATH)
 CHANNEL=$(jq --raw-output ".channel" $CONFIG_PATH)
 BAND=$(jq --raw-output ".band" $CONFIG_PATH)
 N=$(jq --raw-output ".wifi_n" $CONFIG_PATH)
+LEGACY$(jq --raw-output ".wifi_b" $CONFIG_PATH)
 ADDRESS=$(jq --raw-output ".address" $CONFIG_PATH)
 NETMASK=$(jq --raw-output ".netmask" $CONFIG_PATH)
 BROADCAST=$(jq --raw-output ".broadcast" $CONFIG_PATH)
@@ -106,6 +108,12 @@ HCONFIG="/hostapd.conf"
 echo "Setup hostapd ..."
 echo "ssid=${SSID}" >> ${HCONFIG}
 echo "wpa_passphrase=${WPA_PASSPHRASE}" >> ${HCONFIG}
+if test ${AES} = true
+then
+    echo "rsn_pairwise=CCMP" >> ${HCONFIG}
+else
+    echo "rsn_pairwise=TKIP" >> ${HCONFIG}
+fi
 echo "channel=${CHANNEL}" >> ${HCONFIG}
 echo "hw_mode=${BAND}" >> ${HCONFIG}
 if test ${N} = true
@@ -133,6 +141,12 @@ then
     echo "macaddr_acl=1" >> ${HCONFIG}
 else
     echo "macaddr_acl=0" >> ${HCONFIG}
+fi
+if test ${LEGACY} = true
+then
+    echo "legacy_rates=1" >> ${HCONFIG}
+else
+    echo "legacy_rates=0" >> ${HCONFIG}
 fi
 echo "" >> ${HCONFIG}
 

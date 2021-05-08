@@ -1,12 +1,25 @@
 # Changelog
 
+## [1.2.3]
+### Added
+- You can now toggle `802.11b`
+- You can now choose between `AES` (`CCMP`) & `TKIP` authentication
+
+### Changed
+
+- The `WiFI N` option is now enabled by default
+- The `WiFi B` option is now disabled by default
+
+### Removed
+- Useless comments from the `hostapd.conf` file
+
 ## [1.2.2]
 ### Added
 - You can now allow any MAC addresses (useful for devices that use a "private MAC address")
 
 ## [1.2.1]
 ### Added
-- You can now toggle `WiFi N` mode
+- You can now toggle `802.11n`
 - You can now toggle QoS
 
 ## [1.2.0]
