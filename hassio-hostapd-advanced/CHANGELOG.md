@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.8]
+### Changed
+- Tweaked the configuration of the `40MHz` option
+
 ## [1.2.7]
 - Bugfix
 

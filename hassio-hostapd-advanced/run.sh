@@ -123,7 +123,7 @@ else
 fi
 if test ${HT40} = true
 then
-    echo "ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]" >> ${HCONFIG}
+    echo "ht_capab=[HT40+][SHORT-GI-20][SHORT-GI-40]" >> ${HCONFIG}
 fi
 echo "interface=${INTERFACE}" >> ${HCONFIG}
 if test ${SSID_BROADCAST} = true

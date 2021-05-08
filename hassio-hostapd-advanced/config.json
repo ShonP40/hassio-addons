@@ -1,6 +1,6 @@
 {
   "name": "Hassio Hostapd Advanced",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "slug": "hassio-hostapd-advanced",
   "description": "Access point for your IoT devives with a configurable network interface, DHCP server and more",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
