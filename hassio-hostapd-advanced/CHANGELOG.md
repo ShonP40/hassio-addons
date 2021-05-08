@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.2]
+### Added
+- You can now allow any MAC addresses (useful for devices that use a "private MAC address")
+
 ## [1.2.1]
 ### Added
 - You can now toggle `WiFi N` mode

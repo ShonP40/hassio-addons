@@ -1,6 +1,6 @@
 {
   "name": "Hassio Hostapd Advanced",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "slug": "hassio-hostapd-advanced",
   "description": "Access point for your IoT devives with a configurable network interface, DHCP server and more",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -43,6 +43,7 @@
     "allow_internet": true,
     "internet_interface": "wlan0",
     "qos": false,
+    "allow_any_mac_address": "false",
     "dhcp_enable": true,
     "dhcp_start": "192.168.4.2",
     "dhcp_end": "192.168.4.199",
@@ -65,6 +66,7 @@
     "allow_internet": "bool",
     "internet_interface": "str",
     "qos": "bool",
+    "allow_any_mac_address": "bool",
     "dhcp_enable": "bool",
     "dhcp_start": "str",
     "dhcp_end": "str",

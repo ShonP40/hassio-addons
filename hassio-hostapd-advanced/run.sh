@@ -36,6 +36,7 @@ COUNTRY=$(jq --raw-output ".country" $CONFIG_PATH)
 ALLOW_INTERNET=$(jq --raw-output ".allow_internet" $CONFIG_PATH)
 INTERNET_INTERFACE=$(jq --raw-output ".internet_interface" $CONFIG_PATH)
 QOS=$(jq --raw-output ".qos" $CONFIG_PATH)
+MAC=$(jq --raw-output ".allow_any_mac_address" $CONFIG_PATH)
 
 DHCP_SERVER=$(jq --raw-output ".dhcp_enable" $CONFIG_PATH)
 DHCP_START=$(jq --raw-output ".dhcp_start" $CONFIG_PATH)
@@ -126,6 +127,12 @@ then
     echo "wmm_enabled=1" >> ${HCONFIG}
 else
     echo "wmm_enabled=0" >> ${HCONFIG}
+fi
+if test ${MAC} = true
+then
+    echo "macaddr_acl=1" >> ${HCONFIG}
+else
+    echo "macaddr_acl=0" >> ${HCONFIG}
 fi
 echo "" >> ${HCONFIG}
 
