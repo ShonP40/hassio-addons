@@ -12,7 +12,7 @@ The available configuration options are listed bellow. Make sure to edit them ac
     "hide_ssid": "false",
     "wpa_passphrase": "WIFI_PASSWORD",
     "channel": "0",
-    "band": "n",
+    "band": "g",
     "wifi_n": false,
     "address": "192.168.4.1",
     "netmask": "255.255.255.0",
