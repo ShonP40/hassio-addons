@@ -43,7 +43,7 @@
     "allow_internet": true,
     "internet_interface": "wlan0",
     "qos": false,
-    "allow_any_mac_address": "false",
+    "allow_any_mac_address": false,
     "dhcp_enable": true,
     "dhcp_start": "192.168.4.2",
     "dhcp_end": "192.168.4.199",
