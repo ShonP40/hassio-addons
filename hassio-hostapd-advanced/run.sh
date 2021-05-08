@@ -29,7 +29,6 @@ AES=$(jq --raw-output ".aes" $CONFIG_PATH)
 CHANNEL=$(jq --raw-output ".channel" $CONFIG_PATH)
 BAND=$(jq --raw-output ".band" $CONFIG_PATH)
 N=$(jq --raw-output ".wifi_n" $CONFIG_PATH)
-LEGACY$(jq --raw-output ".wifi_b" $CONFIG_PATH)
 ADDRESS=$(jq --raw-output ".address" $CONFIG_PATH)
 NETMASK=$(jq --raw-output ".netmask" $CONFIG_PATH)
 BROADCAST=$(jq --raw-output ".broadcast" $CONFIG_PATH)
@@ -141,12 +140,6 @@ then
     echo "macaddr_acl=1" >> ${HCONFIG}
 else
     echo "macaddr_acl=0" >> ${HCONFIG}
-fi
-if test ${LEGACY} = true
-then
-    echo "legacy_rates=1" >> ${HCONFIG}
-else
-    echo "legacy_rates=0" >> ${HCONFIG}
 fi
 echo "" >> ${HCONFIG}
 

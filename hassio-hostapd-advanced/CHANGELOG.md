@@ -1,12 +1,15 @@
 # Changelog
 
+## [1.2.4]
+### Removed
+- Toggling the `802.11b` option as it doesnt seem to be available in the `Alpine aarch64` version of `Hostapd`.
+
 ## [1.2.3]
 ### Added
 - You can now toggle `802.11b`
 - You can now choose between `AES` (`CCMP`) & `TKIP` authentication
 
 ### Changed
-
 - The `WiFI N` option is now enabled by default
 - The `WiFi B` option is now disabled by default
 
