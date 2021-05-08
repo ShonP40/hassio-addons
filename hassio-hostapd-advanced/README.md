@@ -22,7 +22,7 @@ The available configuration options are listed bellow. Make sure to edit them ac
     "allow_internet": true,
     "internet_interface": "wlan0",
     "qos": false,
-    "allow_any_mac_address": "false"
+    "allow_any_mac_address": "false",
     "dhcp_server": true,
     "dhcp_start": "192.168.4.2",
     "dhcp_end": "192.168.4.199",
