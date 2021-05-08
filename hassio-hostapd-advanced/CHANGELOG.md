@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.2.1]
+### Added
+- You can now toggle `WiFi N` mode
+- You can now toggle QoS
+
 ## [1.2.0]
 ### Added
 - You can now hide the broadcasted hotspot SSID

@@ -27,6 +27,7 @@ SSID_BROADCAST=$(jq --raw-output ".hide_ssid" $CONFIG_PATH)
 WPA_PASSPHRASE=$(jq --raw-output ".wpa_passphrase" $CONFIG_PATH)
 CHANNEL=$(jq --raw-output ".channel" $CONFIG_PATH)
 BAND=$(jq --raw-output ".band" $CONFIG_PATH)
+N=$(jq --raw-output ".wifi_n" $CONFIG_PATH)
 ADDRESS=$(jq --raw-output ".address" $CONFIG_PATH)
 NETMASK=$(jq --raw-output ".netmask" $CONFIG_PATH)
 BROADCAST=$(jq --raw-output ".broadcast" $CONFIG_PATH)
@@ -34,6 +35,7 @@ INTERFACE=$(jq --raw-output ".hotspot_interface" $CONFIG_PATH)
 COUNTRY=$(jq --raw-output ".country" $CONFIG_PATH)
 ALLOW_INTERNET=$(jq --raw-output ".allow_internet" $CONFIG_PATH)
 INTERNET_INTERFACE=$(jq --raw-output ".internet_interface" $CONFIG_PATH)
+QOS=$(jq --raw-output ".qos" $CONFIG_PATH)
 
 DHCP_SERVER=$(jq --raw-output ".dhcp_enable" $CONFIG_PATH)
 DHCP_START=$(jq --raw-output ".dhcp_start" $CONFIG_PATH)
@@ -105,6 +107,12 @@ echo "ssid=${SSID}" >> ${HCONFIG}
 echo "wpa_passphrase=${WPA_PASSPHRASE}" >> ${HCONFIG}
 echo "channel=${CHANNEL}" >> ${HCONFIG}
 echo "hw_mode=${BAND}" >> ${HCONFIG}
+if test ${N} = true
+then
+    echo "ieee80211n=1" >> ${HCONFIG}
+else
+    echo "ieee80211n=0" >> ${HCONFIG}
+fi
 echo "interface=${INTERFACE}" >> ${HCONFIG}
 if test ${SSID_BROADCAST} = true
 then
@@ -113,6 +121,12 @@ else
     echo "ignore_broadcast_ssid=0" >> ${HCONFIG}
 fi
 echo "country_code=${COUNTRY}" >> ${HCONFIG}
+if test ${QOS} = true
+then
+    echo "wmm_enabled=1" >> ${HCONFIG}
+else
+    echo "wmm_enabled=0" >> ${HCONFIG}
+fi
 echo "" >> ${HCONFIG}
 
 # Setup interface
