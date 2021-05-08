@@ -90,7 +90,7 @@ Specifies the WiFi adapter that will be used to broadcast the access point.
 
 ### Option: `country`
 
-Specifies the country the user lives in to only allow using the allowed WiFi bands for that country.
+Specifies the country the user lives in to only allow using the allowed WiFi channels for that country.
 
 ### Option: `allow_internet`
 
