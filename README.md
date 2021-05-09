@@ -1,4 +1,4 @@
-# hassio-addons
+# [hassio-addons](https://github.com/ShonP40/hassio-addons)
 Addons for Supervised Home Assistant installations (e.g. HA OS)
 
 ## This repo includes the following addon:
