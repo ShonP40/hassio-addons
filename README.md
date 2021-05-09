@@ -1,9 +1,11 @@
 # [hassio-addons](https://github.com/ShonP40/hassio-addons)
 Addons for Supervised Home Assistant installations (e.g. HA OS)
 
-## This repo includes the following addon:
+## Add-ons provided by this repository:
 
-[Hassio Hostapd Advanced](https://github.com/ShonP40/hassio-addons/tree/master/hassio-hostapd-advanced)
+- [Hassio Hostapd Advanced](https://github.com/ShonP40/hassio-addons/tree/master/hassio-hostapd-advanced)
+
+  Access point for your IoT devices
 
 ## Installation
 
