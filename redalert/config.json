@@ -1,6 +1,6 @@
 {
   "name": "Redalert",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "slug": "redalert",
   "description": "Get redalerts for your area from Oref's website",
   "arch": ["armv7", "aarch64", "amd64"],
