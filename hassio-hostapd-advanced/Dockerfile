@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-MAINTAINER ShonP40 <contact@shon.codes>
+LABEL maintainer = ShonP40 <contact@shon.codes>
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
