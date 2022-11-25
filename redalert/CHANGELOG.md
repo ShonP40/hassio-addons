@@ -1,5 +1,8 @@
 # Changelog
 
+## [2.1.2]
+- Export the environment variables from the `run.sh` file
+
 ## [2.1.1]
 - Fixed copying the `run.sh` file into the container
 
