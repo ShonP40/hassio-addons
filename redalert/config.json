@@ -12,7 +12,7 @@
     "mqtt_port": "1883",
     "mqtt_user": "user",
     "mqtt_pass": "password",
-    "mqtt_topic": "/redalert"
+    "mqtt_topic": "redalert"
   },
   "schema": {
     "region": "str",
