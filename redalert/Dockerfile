@@ -29,4 +29,6 @@ RUN mkdir /opt/redalert
 COPY redalert.py /opt/redalert
 
 # Run
+COPY run.sh /
+RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
