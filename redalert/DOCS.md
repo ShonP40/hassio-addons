@@ -26,7 +26,7 @@ Used for setting the region for monitoring. default is * (any)
 ```yaml
   - platform: mqtt
     name: "Red Alert"
-    state_topic: "/redalert/"
+    state_topic: "redalert/"
     # unit_of_measurement: '%'
     icon: fas:broadcast-tower
     value_template: "{{ value_json }}"
@@ -37,7 +37,7 @@ Used for setting the region for monitoring. default is * (any)
 ```yaml
   - platform: mqtt
     name: "Red Alert"
-    state_topic: "/redalert/"
+    state_topic: "redalert/"
     # unit_of_measurement: '%'
     icon: fas:broadcast-tower
     value_template: "{{ value_json.data }}"
@@ -48,7 +48,7 @@ Used for setting the region for monitoring. default is * (any)
 ```yaml
   - platform: mqtt
     name: "Red Alert"
-    state_topic: "/redalert/alarm"
+    state_topic: "redalert/alarm"
     icon: fas:broadcast-tower
     value_template: "{{ value_json }}"
     qos: 1
