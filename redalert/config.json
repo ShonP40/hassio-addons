@@ -1,0 +1,26 @@
+{
+  "name": "Redalert",
+  "version": "2.1.0",
+  "slug": "redalert",
+  "description": "Get redalerts for your area from Oref's website",
+  "arch": ["armv7", "aarch64", "amd64"],
+  "url": "https://github.com/ShonP40/hassio-addons/tree/master/redalert",
+  "options": {
+    "region": "*",
+    "include_test_alerts": "False",
+    "mqtt_host": "127.0.0.1",
+    "mqtt_port": "1883",
+    "mqtt_user": "user",
+    "mqtt_pass": "password",
+    "mqtt_topic": "/redalert"
+  },
+  "schema": {
+    "region": "str",
+    "include_test_alerts": "str",
+    "mqtt_host": "str",
+    "mqtt_port": "str",
+    "mqtt_user": "str",
+    "mqtt_pass": "str",
+    "mqtt_topic": "str"
+  }
+} 
