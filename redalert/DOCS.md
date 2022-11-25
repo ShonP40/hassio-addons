@@ -13,7 +13,7 @@ Used for setting the MQTT Broker Username, default value is `user`.
 - *MQTT_PASS*</br>
 Used for setting the MQTT Broker Password, default value is `password`.
 - *MQTT_TOPIC*</br>
-Custom MQTT Topic. default value is `/redalert`
+Custom MQTT Topic. default value is `redalert`
 - *INCLUDE_TEST_ALERTS*</br>
 used to show pikud ha oref tests, default is False.
 - *REGION*</br>
