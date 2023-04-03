@@ -1,5 +1,8 @@
 # Changelog
 
+## [2.1.3]
+- The addon will now exit on error to allow the Home Assistant watchdog to restart it
+
 ## [2.1.2]
 - Export the environment variables from the `run.sh` file
 
