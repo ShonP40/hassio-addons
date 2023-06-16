@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import os
 import threading
+import time
+import json
+import sys
 import paho.mqtt.client as mqtt
 import urllib3
-import os
 from loguru import logger
-import time
-import codecs
 import apprise
-import json
+#import codecs
 
 os.environ['PYTHONIOENCODING'] = 'utf-8'
 os.environ['LANG'] = 'C.UTF-8'
@@ -133,7 +134,7 @@ def monitor():
          alarm_off()
   except Exception as ex:
          logger.error(str(ex))
-         exit(1)
+         sys.exit(1)
   finally:
      r.release_conn()
 
