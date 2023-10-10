@@ -1,5 +1,8 @@
 # Changelog
 
+## [2.1.5]
+- Fixed the `alarm` topic not updating
+
 ## [2.1.4]
 - Fixed exiting on error
 

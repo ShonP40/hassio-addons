@@ -97,7 +97,7 @@ if len(NOTIFIERS)!=0:
 
 def alarm_on(data):
     client.publish(MQTT_TOPIC + "/data", str(data["data"]), qos = 0, retain = False)
-    client.publish(MQTT_TOPIC, 'on', qos = 0, retain = False)
+    client.publish(MQTT_TOPIC + "/alarm", 'on', qos = 0, retain = False)
     if len(NOTIFIERS)!= 0:
         logger.info("Alerting using Notifires")
         apobj.notify(
