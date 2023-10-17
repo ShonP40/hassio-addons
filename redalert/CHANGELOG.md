@@ -1,5 +1,8 @@
 # Changelog
 
+## [2.1.7]
+- Cleaned up unused dependencies
+
 ## [2.1.6]
 - Fixed the logger
 - Cleaned up unused code

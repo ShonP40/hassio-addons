@@ -10,8 +10,7 @@ RUN apt install -yqq python3-pip jq
 RUN pip3 install --upgrade pip setuptools  --no-cache-dir && \
     pip3 install paho-mqtt --no-cache-dir && \
     pip3 install urllib3 --no-cache-dir && \
-    pip3 install loguru --no-cache-dir && \
-    pip3 install apprise --no-cache-dir
+    pip3 install loguru --no-cache-dir
 
 # Configure the environment
 ENV PYTHONIOENCODING=utf-8
