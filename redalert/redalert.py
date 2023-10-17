@@ -9,7 +9,6 @@ import paho.mqtt.client as mqtt
 import urllib3
 from loguru import logger
 import apprise
-# import codecs
 
 os.environ['PYTHONIOENCODING'] = 'utf-8'
 os.environ['LANG'] = 'C.UTF-8'
@@ -25,8 +24,6 @@ debug = os.getenv('DEBUG_MODE')
 region = os.getenv('REGION')
 NOTIFIERS = os.getenv("NOTIFIERS")
 INCLUDE_TEST_ALERTS = os.getenv("INCLUDE_TEST_ALERTS")
-
-# reader = codecs.getreader('utf-8')
 
 logger.info("Monitoring alerts for : " + region)
 
