@@ -8,7 +8,6 @@ import sys
 import paho.mqtt.client as mqtt
 import urllib3
 from loguru import logger
-import apprise
 
 os.environ['PYTHONIOENCODING'] = 'utf-8'
 os.environ['LANG'] = 'C.UTF-8'
@@ -22,23 +21,20 @@ passw = os.getenv('MQTT_PASS')
 MQTT_TOPIC = os.environ.get("MQTT_TOPIC", "/redalert")
 debug = os.getenv('DEBUG_MODE')
 region = os.getenv('REGION')
-NOTIFIERS = os.getenv("NOTIFIERS")
 INCLUDE_TEST_ALERTS = os.getenv("INCLUDE_TEST_ALERTS")
 
 logger.info("Monitoring alerts for : " + region)
 
-
 # Setting Request Headers
 http = urllib3.PoolManager()
 _headers = {'Referer': 'https://www.oref.org.il/',
-            'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36", 'X-Requested-With': 'XMLHttpRequest'}
+            'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36",
+            'X-Requested-With': 'XMLHttpRequest'}
 url = 'https://www.oref.org.il/WarningMessages/alert/alerts.json'
 if debug == 'True':
     url = 'http://localhost/alerts.json'
 
 # Check Connection Status
-
-
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         client.connected_flag = True  # set flag
@@ -55,22 +51,16 @@ def on_connect(client, userdata, flags, rc):
         if rc == 5:
             logger.error("Connection refused - not authorised")
 
-
 def on_disconnect(client, userdata, rc):
     logger.info("disconnecting reason  " + str(rc))
     client.connected_flag = False
     client.disconnect_flag = True
     client.connect(server)
 
-
 def on_log(client, userdata, level, buf):
     logger.info(buf)
 
-
 alerts = [0]
-
-# Setting apprise Job Manager
-apobj = apprise.Apprise()
 
 # Setting up MqttClient
 client = mqtt.Client("redalert")
@@ -89,37 +79,17 @@ while not client.connected_flag:  # wait in loop
 logger.info("in Main Loop")
 client.loop_stop()  # Stop loop
 
-
-if len(NOTIFIERS) != 0:
-    logger.info("Setting Apprise Alert")
-    jobs = NOTIFIERS.split()
-    for job in jobs:
-        logger.info("Adding: " + job)
-        apobj.add(job)
-
-
 def alarm_on(data):
-    client.publish(MQTT_TOPIC + "/data",
-                   str(data["data"]), qos=0, retain=False)
+    client.publish(MQTT_TOPIC + "/data", str(data["data"]), qos=0, retain=False)
     client.publish(MQTT_TOPIC + "/alarm", 'on', qos=0, retain=False)
-    if len(NOTIFIERS) != 0:
-        logger.info("Alerting using Notifires")
-        apobj.notify(
-            body='באזורים הבאים: \r\n ' +
-            ', '.join(data["data"]) + '\r\n' + str(data["desc"]),
-            title=str(data["title"]),
-        )
-
 
 def alarm_off():
     client.publish(MQTT_TOPIC + "/alarm", 'off', qos=0, retain=False)
     client.publish(MQTT_TOPIC, "No active alerts", qos=0, retain=False)
 
-
 def is_test_alert(alert):
     # if includes, all alerts are treated as not test
     return INCLUDE_TEST_ALERTS == 'False' and ('בדיקה' in alert['data'] or 'בדיקה מחזורית' in alert['data'])
-
 
 def monitor():
     # start the timer
@@ -144,7 +114,6 @@ def monitor():
         sys.exit(1)
     finally:
         r.release_conn()
-
 
 if __name__ == '__main__':
     monitor()

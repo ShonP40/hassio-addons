@@ -21,8 +21,6 @@ ENV LANG=C.UTF-8
 #Debug Mode for testing
 ENV DEBUG_MODE "False"
 
-ENV NOTIFIERS ""
-
 # Create working directory
 RUN mkdir /opt/redalert
 

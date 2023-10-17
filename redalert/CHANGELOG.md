@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.6]
+- Fixed the logger
+- Cleaned up unused code
+
 ## [2.1.5]
 - Fixed the `alarm` topic not updating
 
