@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.6.7
+- Use Alpine 3.16
+
 ## 2.6.6
 - Use Alpine 3.17
 
