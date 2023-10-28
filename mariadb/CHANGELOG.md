@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.6.4
+- Install the proper MariaDB version
+
 ## 2.6.3
 - Should build now
 
