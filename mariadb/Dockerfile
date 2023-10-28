@@ -1,10 +1,11 @@
-FROM alpine:3.16
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 # Setup base
-RUN apk add --no-cache \
-    mariadb \
-    mariadb-client \
-    mariadb-server-utils \
+RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/v3.17/main \
+    mariadb=10.6.14-r0 \
+    mariadb-client=10.6.14-r0 \
+    mariadb-server-utils=10.6.14-r0 \
     pwgen
 
 ENV \

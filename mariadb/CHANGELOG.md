@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.6.8
+- Revert
+- Use the Alpine 3.17 repo
+
 ## 2.6.7
 - Use Alpine 3.16
 
