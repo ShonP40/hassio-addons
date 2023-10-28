@@ -1,5 +1,5 @@
 ---
-version: 2.6.1
+version: 2.6.2
 slug: mariadb
 name: "MariaDB with Recovery"
 description: A SQL database server
@@ -12,7 +12,7 @@ arch:
   - i386
 backup_post: unlock-tables-for-backup
 backup_pre: lock-tables-for-backup
-image: homeassistant/{arch}-addon-mariadb
+#image: homeassistant/{arch}-addon-mariadb
 init: false
 options:
   databases:

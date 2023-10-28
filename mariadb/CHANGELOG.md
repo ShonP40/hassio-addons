@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.6.2
+- Don't use the HA image
+
 ## 2.6.1
 
 - Use proper log redirection during backup
