@@ -3,9 +3,9 @@ FROM $BUILD_FROM
 
 # Setup base
 RUN apk add --no-cache \
-    mariadb=10.6.12-r0 \
-    mariadb-client=10.6.12-r0 \
-    mariadb-server-utils=10.6.12-r0 \
+    mariadb=10.6.14-r0 \
+    mariadb-client=10.6.14-r0 \
+    mariadb-server-utils=10.6.14-r0 \
     pwgen
 
 ENV \

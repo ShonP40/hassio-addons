@@ -1,5 +1,5 @@
 ---
-version: 2.6.4
+version: 2.6.5
 slug: mariadb
 name: "MariaDB with Recovery"
 description: A SQL database server

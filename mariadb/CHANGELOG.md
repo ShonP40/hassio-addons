@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.6.5
+- Use MariaDB 10.6.14
+
 ## 2.6.4
 - Install the proper MariaDB version
 
