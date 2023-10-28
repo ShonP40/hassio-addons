@@ -1,11 +1,10 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM alpine:3.17
 
 # Setup base
 RUN apk add --no-cache \
-    mariadb=10.6.14-r0 \
-    mariadb-client=10.6.14-r0 \
-    mariadb-server-utils=10.6.14-r0 \
+    mariadb \
+    mariadb-client \
+    mariadb-server-utils \
     pwgen
 
 ENV \

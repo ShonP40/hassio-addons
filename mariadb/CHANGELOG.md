@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.6.6
+- Use Alpine 3.17
+
 ## 2.6.5
 - Use MariaDB 10.6.14
 
