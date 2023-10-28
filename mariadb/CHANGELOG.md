@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.6.3
+- Should build now
+
 ## 2.6.2
 - Don't use the HA image
 
