@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.6.9
+- Attempt a higher recovery value
+
 ## 2.6.8
 - Revert
 - Use the Alpine 3.17 repo
